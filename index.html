@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيق حرفيون</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+    <script>
+        // إعداد Firebase
+        var firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_AUTH_DOMAIN",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_STORAGE_BUCKET",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID",
+            measurementId: "YOUR_MEASUREMENT_ID"
+        };
+        // تهيئة Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+</head>
+<body>
+    <header>
+        <h1>تطبيق حرفيون</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="about.html">عن التطبيق</a></li>
+                <li><a href="services.html">خدماتنا</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+                <li><a href="login.html">تسجيل الدخول</a></li>
+                <li><a href="add-service.html">إضافة خدمة</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="services">
+            <h2>خدماتنا</h2>
+            <div class="service">
+                <h3><a href="plumbing.html">السباكة</a></h3>
+                <p>نوفر أفضل خدمات السباكة لإصلاح جميع مشاكل الأنابيب.</p>
+            </div>
+            <div class="service">
+                <h3><a href="electric.html">الكهرباء</a></h3>
+                <p>تقديم خدمات الصيانة الكهربائية وتركيب الأجهزة الكهربائية.</p>
+            </div>
+            <div class="service">
+                <h3><a href="home-repairs.html">التصليحات المنزلية</a></h3>
+                <p>توفير جميع أنواع التصليحات المنزلية بكل احترافية.</p>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 تطبيق حرفيون. جميع الحقوق محفوظة.</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

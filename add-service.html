@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إضافة خدمة</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>إضافة خدمة جديدة</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="about.html">عن التطبيق</a></li>
+                <li><a href="services.html">خدماتنا</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+                <li><a href="login.html">تسجيل الدخول</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <form id="addServiceForm">
+            <input type="text" id="serviceName" placeholder="اسم الخدمة" required>
+            <textarea id="serviceDescription" placeholder="وصف الخدمة" required></textarea>
+            <input type="text" id="servicePrice" placeholder="السعر" required>
+            <input type="text" id="servicePhone" placeholder="رقم الهاتف" required>
+            <select id="serviceCategory" required>
+                <option value="">اختر القسم</option>
+                <option value="plumbing">السباكة</option>
+                <option value="electric">الكهرباء</option>
+                <option value="home-repairs">التصليحات المنزلية</option>
+            </select>
+            <input type="file" id="serviceImage" accept="image/*" required>
+            <button type="submit">إضافة</button>
+        </form>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 تطبيق حرفيون. جميع الحقوق محفوظة.</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

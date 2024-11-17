@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <script>
+        // إعداد Firebase
+        var firebaseConfig = {
+            apiKey: "AIzaSyCGIb4Q_9xzNXvBtBwrO5l5AzPoTBPV6Pw",
+            authDomain: "appp-25cfd.firebaseapp.com",
+            projectId: "appp-25cfd",
+            storageBucket: "appp-25cfd.firebasestorage.app",
+            messagingSenderId: "900605859270",
+            appId: "1:900605859270:web:59b8234561a16559240ec7",
+            measurementId: "G-Z2PLLFFQ19"
+        };
+        // تهيئة Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+</head>
+<body>
+    <header>
+        <h1>تسجيل الدخول</h1>
+    </header>
+    
+    <main>
+        <section id="login">
+            <h2>مرحبًا بعودتك!</h2>
+            <button id="googleLogin">تسجيل الدخول باستخدام Google</button>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 تطبيق حرفيون. جميع الحقوق محفوظة.</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

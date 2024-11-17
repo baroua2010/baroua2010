@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل الخدمة</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+    <script>
+        // إعداد Firebase
+        var firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_AUTH_DOMAIN",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_STORAGE_BUCKET",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID",
+            measurementId: "YOUR_MEASUREMENT_ID"
+        };
+        // تهيئة Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const db = firebase.firestore();
+            const params = new URLSearchParams(window.location.search);
+            const serviceId = params.get('id');
+
+            if (serviceId) {
+                db.collection('services').doc(serviceId).get().then((doc) => {
+                    if (doc.exists) {
+                        const service = doc.data();
+                        document.getElementById('serviceName').textContent = service.name;
+                        document.getElementById('serviceDescription').textContent = service.description;
+                        document.getElementById('servicePrice').textContent = `السعر: ${service.price}`;
+                        document.getElementById('servicePhone').textContent = `رقم الهاتف: ${service.phone}`;
+                        document.getElementById('serviceImage').src = service.image;
+                    } else {
+                        console.log('لا توجد خدمة بهذا المعرف.');
+                    }
+                }).catch((error) => {
+                    console.error('خطأ في جلب تفاصيل الخدمة:', error);
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1 id="serviceName">تفاصيل الخدمة</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="about.html">عن التطبيق</a></li>
+                <li><a href="services.html">خدماتنا</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+                <li><a href="login.html">تسجيل الدخول</a></li>
+                <li><a href="add-service.html">إضافة خدمة</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <img id="serviceImage" src="" alt="صورة الخدمة">
+        <p id="serviceDescription">وصف الخدمة</p>
+        <p id="servicePrice">السعر</p>
+        <p id="servicePhone">رقم الهاتف</p>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 تطبيق حرفيون. جميع الحقوق محفوظة.</p>
+    </footer>
+</body>
+</html>
